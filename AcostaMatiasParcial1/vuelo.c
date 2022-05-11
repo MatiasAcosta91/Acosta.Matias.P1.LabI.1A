@@ -105,6 +105,7 @@ int altaVuelo(eVuelo vuelos[],int maxVuelos,eAvion aviones[],int cantAviones,eTi
                     utn_getNumeroInt(&auxVuelo.idDestino,mensajeDestino,mensajeError,20000,20004,INTENTOSINF);
 
                     printf("Ingrese Fecha dd/mm/aaaa: ");
+                    fflush(stdin);
                     scanf("%d/%d/%d",&auxVuelo.fecha.dia,&auxVuelo.fecha.mes,&auxVuelo.fecha.anio);
                     printf("ID VUELO   ID AVION   DESTINO        FECHA\n");
                     printf("-------------------------------------------\n");

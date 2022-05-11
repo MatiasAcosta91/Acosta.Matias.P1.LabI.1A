@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1652281113 source:d:\facultad\primer año\primer cuatrimestre 2022\programacion uno\codeblock\practica parciales\acostamatiasparcial1\main.c
+1652281187 source:d:\facultad\primer año\primer cuatrimestre 2022\programacion uno\codeblock\practica parciales\acostamatiasparcial1\main.c
 	<stdio.h>
 	<stdlib.h>
 	"avion.h"
@@ -16,7 +16,7 @@
 
 1652279269 d:\facultad\primer año\primer cuatrimestre 2022\programacion uno\codeblock\practica parciales\acostamatiasparcial1\aerolinea.h
 
-1652278856 source:d:\facultad\primer año\primer cuatrimestre 2022\programacion uno\codeblock\practica parciales\acostamatiasparcial1\avion.c
+1652282223 source:d:\facultad\primer año\primer cuatrimestre 2022\programacion uno\codeblock\practica parciales\acostamatiasparcial1\avion.c
 	<stdlib.h>
 	<stdio.h>
 	<ctype.h>
@@ -46,7 +46,7 @@
 
 1652279269 d:\facultad\primer año\primer cuatrimestre 2022\programacion uno\codeblock\practica parciales\acostamatiasparcial1\tipo.h
 
-1652278691 source:d:\facultad\primer año\primer cuatrimestre 2022\programacion uno\codeblock\practica parciales\acostamatiasparcial1\vuelo.c
+1652282320 source:d:\facultad\primer año\primer cuatrimestre 2022\programacion uno\codeblock\practica parciales\acostamatiasparcial1\vuelo.c
 	<stdlib.h>
 	<stdio.h>
 	<ctype.h>

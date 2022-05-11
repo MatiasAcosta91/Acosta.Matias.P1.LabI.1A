@@ -117,8 +117,8 @@ int altaAvion(eAvion aviones[],int maxAviones,eAerolinea aerolineas[],int cantAe
             utn_getNumeroInt(&auxAvion.capacidad,mensajeCapacidad,mensajeError,10,30,INTENTOSINF);
 
             auxAvion.id= *nextIdAvion;
-            printf("ID           AEROLINEA      TIPO CAPACIDAD \n");
-            printf("--------------------------------------------\n");
+            printf("ID           AEROLINEA      TIPO          CAPACIDAD \n");
+            printf("----------------------------------------------------\n");
             listarAvion(auxAvion,aerolineas,cantAero,tipos,cantTipos);
             printf("\n\nConfirma Alta s/n: ");
             fflush(stdin);
@@ -175,8 +175,8 @@ int bajaAvion (eAvion aviones[],int maxAviones,eAerolinea aerolineas[],int cantA
             }
             else
             {
-                printf("ID           AEROLINEA      TIPO CAPACIDAD \n");
-                printf("--------------------------------------------\n");
+                printf("ID           AEROLINEA      TIPO       CAPACIDAD \n");
+                printf("--------------------------------------------------\n");
                 listarAvion(aviones[indiceBuscado],aerolineas,cantAero,tipos,cantTipos);
                 printf("Confirma baja? s/n: ");
                 fflush(stdin);
@@ -236,8 +236,8 @@ int modificarAvion (eAvion aviones[],int maxAviones,eAerolinea aerolineas[],int 
                 do
                 {
                     system("cls");
-                    printf("ID           AEROLINEA      TIPO CAPACIDAD \n");
-                    printf("--------------------------------------------\n");
+                    printf("ID           AEROLINEA      TIPO       CAPACIDAD \n");
+                    printf("--------------------------------------------------\n");
                     listarAvion(auxAvion,aerolineas,cantAero,tipos,cantTipos);
                     switch(menuModificacion())
                     {
