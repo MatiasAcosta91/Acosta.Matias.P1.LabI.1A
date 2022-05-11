@@ -1,0 +1,72 @@
+# depslib dependency file v1.0
+1652281113 source:d:\facultad\primer año\primer cuatrimestre 2022\programacion uno\codeblock\practica parciales\acostamatiasparcial1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"avion.h"
+	"aerolinea.h"
+	"tipo.h"
+	"destino.h"
+	"vuelo.h"
+
+1652270953 source:d:\facultad\primer año\primer cuatrimestre 2022\programacion uno\codeblock\practica parciales\acostamatiasparcial1\aerolinea.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"aerolinea.h"
+
+1652279269 d:\facultad\primer año\primer cuatrimestre 2022\programacion uno\codeblock\practica parciales\acostamatiasparcial1\aerolinea.h
+
+1652278856 source:d:\facultad\primer año\primer cuatrimestre 2022\programacion uno\codeblock\practica parciales\acostamatiasparcial1\avion.c
+	<stdlib.h>
+	<stdio.h>
+	<ctype.h>
+	"avion.h"
+
+1652280419 d:\facultad\primer año\primer cuatrimestre 2022\programacion uno\codeblock\practica parciales\acostamatiasparcial1\avion.h
+	"aerolinea.h"
+	"tipo.h"
+	"ingresosValidaciones.h"
+	"tipo.h"
+
+1652271641 source:d:\facultad\primer año\primer cuatrimestre 2022\programacion uno\codeblock\practica parciales\acostamatiasparcial1\destino.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"destino.h"
+
+1652279625 d:\facultad\primer año\primer cuatrimestre 2022\programacion uno\codeblock\practica parciales\acostamatiasparcial1\destino.h
+
+1652269858 source:d:\facultad\primer año\primer cuatrimestre 2022\programacion uno\codeblock\practica parciales\acostamatiasparcial1\fecha.c
+
+1652270372 source:d:\facultad\primer año\primer cuatrimestre 2022\programacion uno\codeblock\practica parciales\acostamatiasparcial1\tipo.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"tipo.h"
+
+1652279269 d:\facultad\primer año\primer cuatrimestre 2022\programacion uno\codeblock\practica parciales\acostamatiasparcial1\tipo.h
+
+1652278691 source:d:\facultad\primer año\primer cuatrimestre 2022\programacion uno\codeblock\practica parciales\acostamatiasparcial1\vuelo.c
+	<stdlib.h>
+	<stdio.h>
+	<ctype.h>
+	"vuelo.h"
+
+1652272465 source:d:\facultad\primer año\primer cuatrimestre 2022\programacion uno\codeblock\practica parciales\acostamatiasparcial1\ingresosvalidaciones.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"ingresosValidaciones.h"
+
+1652271904 d:\facultad\primer año\primer cuatrimestre 2022\programacion uno\codeblock\practica parciales\acostamatiasparcial1\ingresosvalidaciones.h
+
+1652281043 d:\facultad\primer año\primer cuatrimestre 2022\programacion uno\codeblock\practica parciales\acostamatiasparcial1\vuelo.h
+	"fecha.h"
+	"destino.h"
+	"avion.h"
+	"tipo.h"
+
+1652270372 d:\facultad\primer año\primer cuatrimestre 2022\programacion uno\codeblock\practica parciales\acostamatiasparcial1\fecha.h
+
