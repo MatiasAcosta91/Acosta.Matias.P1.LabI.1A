@@ -70,3 +70,74 @@
 
 1652270372 d:\facultad\primer año\primer cuatrimestre 2022\programacion uno\codeblock\practica parciales\acostamatiasparcial1\fecha.h
 
+1652282623 source:c:\users\acost\onedrive\escritorio\acosta.matias.p1.labi.1a-master\acostamatiasparcial1\aerolinea.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"aerolinea.h"
+
+1652282623 c:\users\acost\onedrive\escritorio\acosta.matias.p1.labi.1a-master\acostamatiasparcial1\aerolinea.h
+
+1653312827 source:c:\users\acost\onedrive\escritorio\acosta.matias.p1.labi.1a-master\acostamatiasparcial1\avion.c
+	<stdlib.h>
+	<stdio.h>
+	<ctype.h>
+	"avion.h"
+
+1653312827 c:\users\acost\onedrive\escritorio\acosta.matias.p1.labi.1a-master\acostamatiasparcial1\avion.h
+	"aerolinea.h"
+	"tipo.h"
+	"ingresosValidaciones.h"
+	"tipo.h"
+
+1652282623 c:\users\acost\onedrive\escritorio\acosta.matias.p1.labi.1a-master\acostamatiasparcial1\tipo.h
+
+1653277902 c:\users\acost\onedrive\escritorio\acosta.matias.p1.labi.1a-master\acostamatiasparcial1\ingresosvalidaciones.h
+
+1652282623 source:c:\users\acost\onedrive\escritorio\acosta.matias.p1.labi.1a-master\acostamatiasparcial1\destino.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"destino.h"
+
+1652282623 c:\users\acost\onedrive\escritorio\acosta.matias.p1.labi.1a-master\acostamatiasparcial1\destino.h
+
+1652282623 source:c:\users\acost\onedrive\escritorio\acosta.matias.p1.labi.1a-master\acostamatiasparcial1\fecha.c
+
+1653279480 source:c:\users\acost\onedrive\escritorio\acosta.matias.p1.labi.1a-master\acostamatiasparcial1\ingresosvalidaciones.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"ingresosValidaciones.h"
+
+1653316456 source:c:\users\acost\onedrive\escritorio\acosta.matias.p1.labi.1a-master\acostamatiasparcial1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"avion.h"
+	"aerolinea.h"
+	"tipo.h"
+	"destino.h"
+	"vuelo.h"
+
+1653316295 c:\users\acost\onedrive\escritorio\acosta.matias.p1.labi.1a-master\acostamatiasparcial1\vuelo.h
+	"fecha.h"
+	"destino.h"
+	"avion.h"
+	"tipo.h"
+
+1652282623 c:\users\acost\onedrive\escritorio\acosta.matias.p1.labi.1a-master\acostamatiasparcial1\fecha.h
+
+1652282623 source:c:\users\acost\onedrive\escritorio\acosta.matias.p1.labi.1a-master\acostamatiasparcial1\tipo.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"tipo.h"
+
+1653316504 source:c:\users\acost\onedrive\escritorio\acosta.matias.p1.labi.1a-master\acostamatiasparcial1\vuelo.c
+	<stdlib.h>
+	<stdio.h>
+	<ctype.h>
+	"vuelo.h"
+

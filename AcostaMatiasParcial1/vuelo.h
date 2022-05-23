@@ -66,3 +66,8 @@ int altaVuelo(eVuelo vuelos[],int maxVuelos,eAvion aviones[],int cantAviones,eTi
  *
  */
 int listarVuelos(eVuelo vuelo[],int cantVuelos,eAvion aviones[],int maxAviones,eDestino destinos[],int cantDestinos);
+int harcodearVuelos(eVuelo vuelos[], int cantVuelos,int* pIdAvion,int* pIdVuelo);
+int listarVuelosPorAvion(eVuelo vuelos[],int cantVuelos,eAvion aviones[],int maxAviones,eDestino destinos[],int cantDestinos,eTipo tipos[],int cantTipos,eAerolinea aerolineas[],int cantAero);
+int informarCostoTotalSegunAvion(eVuelo vuelos[],int cantVuelos,eAvion aviones[],int maxAviones,eDestino destinos[],int cantDestinos,eTipo tipos[],int cantTipos,eAerolinea aerolineas[],int cantAero);
+int avionesSegunDestino (eVuelo vuelos[],int cantVuelos,eAvion aviones[],int maxAviones,eDestino destinos[],int cantDestinos,eTipo tipos[],int cantTipos,eAerolinea aerolineas[],int cantAero);
+int vuelosPorFecha (eVuelo vuelos[],int cantVuelos,eAvion aviones[],int maxAviones,eDestino destinos[],int cantDestinos,eTipo tipos[],int cantTipos,eAerolinea aerolineas[],int cantAero);

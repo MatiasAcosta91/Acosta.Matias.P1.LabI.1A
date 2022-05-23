@@ -14,8 +14,8 @@
 #define MAX_VUELOS 5000
 /*
 MATERIA: LABORATORIO 1
-PARCIAL: 1 PARTE 1
-FECHA: 11/5/2022.
+PARCIAL: 1 PARTE 1 y 2
+FECHA: 11/5/2022 (parte 1)   23/5/22 (parte 2)
 AUTOR: ACOSTA MATIAS JORDAN
 DNI: 36.401.197
 DIVISION: 1A TURNO MAÑANA
@@ -54,8 +54,11 @@ int main()
     eVuelo vuelos[MAX_VUELOS];
     inicializarAviones(aviones,MAX_AVIONES);
     inicializarVuelos(vuelos,MAX_VUELOS);
+
+
     int nextIdAvion = 10000;
     int nextIdVuelo = 100;
+    // harcodearVuelos (vuelos,MAX_VUELOS,&nextIdAvion,&nextIdVuelo);  descomentar para harcodear SOLAMENTE VUELOS.
 
     do
     {
@@ -95,6 +98,36 @@ int main()
             }
             break;
         case 10:
+            listarAvionesSegunAerolinea(aviones,MAX_AVIONES,tipos,CANT_TIPO,aerolineas,CANT_AERO);
+            break;
+        case 11:
+            listarAvionesSegunTipo(aviones,MAX_AVIONES,tipos,CANT_TIPO,aerolineas,CANT_AERO);
+            break;
+        case 12:
+            promediarJetSegunAerolinea(aviones,MAX_AVIONES,tipos,CANT_TIPO,aerolineas,CANT_AERO);
+            break;
+        case 13:
+            informarAvionesPorCadaAerolinea(aviones,MAX_AVIONES,tipos,CANT_TIPO,aerolineas,CANT_AERO);
+            break;
+        case 14:
+            listarAerolineaConMasCarga(aviones,MAX_AVIONES,tipos,CANT_TIPO,aerolineas,CANT_AERO);
+            break;
+            case 15:
+            listarAerolineaConMenosAviones(aviones,MAX_AVIONES,tipos,CANT_TIPO,aerolineas,CANT_AERO);
+            break;
+        case 16:
+            listarAvionesSegunAerolinea(aviones,MAX_AVIONES,tipos,CANT_TIPO,aerolineas,CANT_AERO);
+            break;
+        case 17:
+            informarCostoTotalSegunAvion(vuelos,MAX_VUELOS,aviones,MAX_AVIONES,destinos,CANT_DEST,tipos,CANT_TIPO,aerolineas,CANT_AERO);
+            break;
+        case 18:
+            avionesSegunDestino(vuelos,MAX_VUELOS,aviones,MAX_AVIONES,destinos,CANT_DEST,tipos,CANT_TIPO,aerolineas,CANT_AERO);
+            break;
+        case 19:
+            vuelosPorFecha(vuelos,MAX_VUELOS,aviones,MAX_AVIONES,destinos,CANT_DEST,tipos,CANT_TIPO,aerolineas,CANT_AERO);
+            break;
+        case 20:
             continuar ='n';
             break;
         default:
@@ -112,7 +145,7 @@ int menu()
     int opcion;
     system("cls");
     printf("*********************************************************\n");
-    printf("*                        A B M                           *\n");
+    printf("*                        A B M                          *\n");
     printf("*********************************************************\n");
     printf("1.ALTA AVION .\n");
     printf("2.MODIFICAR AVION .\n");
@@ -123,7 +156,17 @@ int menu()
     printf("7.LISTAR DESTINOS.\n");
     printf("8.ALTA VUELO .\n");
     printf("9.LISTAR VUELOS.\n");
-    printf("10.SALIR .\n");
+    printf("10.PARTE 2: INFORMAR AVIONES POR AEROLINEA.\n");
+    printf("11.PARTE 2: INFORMAR AVIONES SEGUN TIPO.\n");
+    printf("12.PARTE 2: INFORMAR PROMEDIO DE AVIONES JET SEGUN AEROLINEA.\n");
+    printf("13.PARTE 2: INFORMAR AVIONES POR AEROLINEA .\n");
+    printf("14.PARTE 2: INFORMAR AEROLINEA CON MAS CAPACIDAD.\n");
+    printf("15.PARTE 2: INFORMAR AEROLINEA CON MENOR CANTIDAD DE AVIONES.\n");
+    printf("16.PARTE 2: MOSTRAR VUELO SEGUN AVION.\n");
+    printf("17.PARTE 2: SUMA DE PRECIOS DE TODOS LOS VUELOS SEGUN AVION.\n");
+    printf("18.PARTE 2: INFORMAR AVIONES POR DESTINO.\n");
+    printf("19.PARTE 2: INFORMAR VUELOS POR FECHA.\n");
+    printf("20.SALIR .\n");
 
     scanf("%d",&opcion);
     fflush(stdin);

@@ -54,5 +54,6 @@
  *
  */int utn_getAlfanumerico(char* pResultado, char* mensaje, char* mensajeError,int minCaracteres,int maxCaracteres, int reintentos);
 
+int utn_getFecha(int* dia, int* mes, int* anio);
 
 

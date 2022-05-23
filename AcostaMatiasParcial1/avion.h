@@ -123,3 +123,10 @@ int menuModificacion();
  *
  */
 int buscarAvionExistente(eAvion aviones[],int cantAviones,int idAvionBuscado,int* indiceAvionBusc);
+int listarAvionesSegunTipo( eAvion aviones[],int tamAviones,eTipo tipos[],int cantTipos,eAerolinea aerolineas[],int cantAerolineas);
+int listarAvionesSegunAerolinea( eAvion aviones[],int tamAviones,eTipo tipos[],int cantTipos,eAerolinea aerolineas[],int cantAerolineas);
+int promediarJetSegunAerolinea( eAvion aviones[],int tamAviones,eTipo tipos[],int cantTipos,eAerolinea aerolineas[],int cantAerolineas);
+int informarAvionesPorCadaAerolinea(eAvion aviones[],int tamAviones,eTipo tipos[],int cantTipos,eAerolinea aerolineas[],int cantAerolineas);
+int  listarAerolineaConMasCarga (eAvion aviones[],int tamAviones,eTipo tipos[],int cantTipos,eAerolinea aerolineas[],int cantAerolineas);
+int  listarAerolineaConMenosAviones (eAvion aviones[],int tamAviones,eTipo tipos[],int cantTipos,eAerolinea aerolineas[],int cantAerolineas);
+

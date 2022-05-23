@@ -3,6 +3,7 @@
 #include <ctype.h>
 #include "avion.h"
 
+
 #define INTENTOSINF -1
 
 int inicializarAviones (eAvion aviones[], int maxAviones)
@@ -57,7 +58,7 @@ int listarAviones( eAvion aviones[],int tamAviones,eTipo tipos[],int cantTipos,e
     if (aviones != NULL && tipos != NULL && aerolineas != NULL && cantAerolineas > 0 && cantTipos > 0 && tamAviones >0)
     {
         printf("ID           AEROLINEA           TIPO      CAPACIDAD \n");
-        printf("--------------------------------------------------\n");
+        printf("------------------------------------------------------\n");
         for (int i = 0; i < tamAviones; i++)
         {
             if (aviones[i].isEmpty == 0)
@@ -305,3 +306,365 @@ int menuModificacion()
     return opcion;
 }
 
+int listarAvionesSegunTipo( eAvion aviones[],int tamAviones,eTipo tipos[],int cantTipos,eAerolinea aerolineas[],int cantAerolineas)
+{
+    int retorno = 0;
+    char mensajeTipo[]="Seleccione tipo.\n";
+    char mensajeError[]="Error=";
+    int tipoElegido;
+    char descTipo[20];
+    int cont= 0;
+    if (aviones != NULL && tipos != NULL && aerolineas != NULL && cantAerolineas > 0 && cantTipos > 0 && tamAviones >0)
+    {
+        printf("   * * * A V I O N E S   P O R   T I P O * * *\n\n\n");
+        listarTipos(tipos,cantTipos);
+        utn_getNumeroInt(&tipoElegido,mensajeTipo,mensajeError,5000,5004,INTENTOSINF);
+        cargarDescTipo(tipos,cantTipos,tipoElegido,descTipo);
+        printf("ID           AEROLINEA           TIPO      CAPACIDAD \n");
+        printf("--------------------------------------------------\n");
+        for (int i = 0 ; i < tamAviones; i++)
+        {
+            if(aviones[i].isEmpty == 0 && aviones[i].idTipo == tipoElegido)
+            {
+                listarAvion(aviones[i],aerolineas,cantAerolineas,tipos,cantTipos);
+                cont ++;
+            }
+        }
+        if (!cont)
+        {
+            printf("No hay aviones del tipo %s\n",descTipo);
+        }
+        else
+        {
+            printf("Se encontraron un total de %d aviones del tipo %s\n",cont,descTipo);
+        }
+        retorno = 1;
+    }
+    return retorno;
+}
+int listarAvionesSegunAerolinea( eAvion aviones[],int tamAviones,eTipo tipos[],int cantTipos,eAerolinea aerolineas[],int cantAerolineas)
+{
+    int retorno = 0;
+    char mensajeAerolinea[]="Seleccione Aerolinea.\n";
+    char mensajeError[]="Error=";
+    int aerolineaElegida;
+    char descAero[20];
+    int cont= 0;
+    if (aviones != NULL && tipos != NULL && aerolineas != NULL && cantAerolineas > 0 && cantTipos > 0 && tamAviones >0)
+    {
+        printf("   * * * A V I O N E S   P O R   A E R O L I N E A * * *\n\n\n");
+        listarAerolinea(aerolineas,cantAerolineas);
+        utn_getNumeroInt(&aerolineaElegida,mensajeAerolinea,mensajeError,1000,1004,INTENTOSINF);
+        cargarDescAero(aerolineas,cantAerolineas,aerolineaElegida,descAero);
+        printf("ID           AEROLINEA           TIPO      CAPACIDAD \n");
+        printf("--------------------------------------------------\n");
+        for (int i = 0 ; i < tamAviones; i++)
+        {
+            if(aviones[i].isEmpty == 0 && aviones[i].idAerolinea == aerolineaElegida)
+            {
+                listarAvion(aviones[i],aerolineas,cantAerolineas,tipos,cantTipos);
+                cont ++;
+            }
+        }
+        if (!cont)
+        {
+            printf("No hay aviones para la aerolinea %s\n",descAero);
+        }
+        else
+        {
+            printf("Se encontraron un total de %d aviones de la aerolinea %s\n",cont,descAero);
+        }
+        retorno = 1;
+    }
+    return retorno;
+}
+int promediarJetSegunAerolinea( eAvion aviones[],int tamAviones,eTipo tipos[],int cantTipos,eAerolinea aerolineas[],int cantAerolineas)
+{
+    int retorno = 0;
+    char mensajeAerolinea[]="Seleccione Aerolinea.\n";
+    char mensajeError[]="Error=";
+    int aerolineaElegida;
+    char descAero[20];
+    int contJets = 0;
+    int contHelice = 0;
+    int contPlaneador = 0;
+    int contCarga = 0;
+    int total;
+    int flagJet= 0;
+    float promedioJets;
+    if (aviones != NULL && tipos != NULL && aerolineas != NULL && cantAerolineas > 0 && cantTipos > 0 && tamAviones >0)
+    {
+        printf("   * * * P R O M E D I O     J E T S   P O R   A E R O L I N E A * * *\n\n\n");
+        listarAerolinea(aerolineas,cantAerolineas);
+        utn_getNumeroInt(&aerolineaElegida,mensajeAerolinea,mensajeError,1000,1004,INTENTOSINF);
+        cargarDescAero(aerolineas,cantAerolineas,aerolineaElegida,descAero);
+        printf("ID           AEROLINEA           TIPO      CAPACIDAD \n");
+        printf("--------------------------------------------------\n");
+        for (int i = 0 ; i < tamAviones; i++)
+        {
+            if(aviones[i].isEmpty == 0 && aviones[i].idAerolinea == aerolineaElegida)
+            {
+                switch(aviones[i].idTipo)
+                {
+                case 5000:
+                    flagJet = 1;
+                    contJets++;
+                    break;
+                case 5001:
+                    contHelice++;
+                    break;
+                case 5002:
+                    contPlaneador++;
+                    break;
+                case 5003:
+                    contCarga++;
+                    break;
+                }
+            }
+        }
+        if (!flagJet)
+        {
+            printf("No hay aviones del tipo Jet para la aerolinea %s\n",descAero);
+        }
+        else
+        {
+            total = contJets + contHelice + contPlaneador + contCarga;
+            promedioJets = (float) contJets / total;
+            printf("Para la aerolinea %s se encontro un priomedio %.2f de aviones tipo Jet\n",descAero,promedioJets);
+            retorno = 1;
+        }
+
+    }
+    return retorno;
+}
+int informarAvionesPorCadaAerolinea(eAvion aviones[],int tamAviones,eTipo tipos[],int cantTipos,eAerolinea aerolineas[],int cantAerolineas)
+{
+    int retorno = 0;
+    char descAero[20];
+    int flagIngreso;
+    if (aviones != NULL && tipos != NULL && aerolineas != NULL && cantAerolineas > 0 && cantTipos > 0 && tamAviones >0)
+    {
+        printf("   * * *  LISTADO DE AVIONES POR CADA AEROLINEA * * *\n\n\n");
+        for (int a = 0; a < cantAerolineas; a++)
+        {
+            flagIngreso = 0;
+            cargarDescAero(aerolineas,cantAerolineas,aerolineas[a].id,descAero);
+            printf("\n\n\nAerolinea %s: \n",descAero);
+            printf("ID           AEROLINEA           TIPO      CAPACIDAD \n");
+            printf("--------------------------------------------------\n");
+            for (int i = 0; i <tamAviones; i++)
+            {
+                if (aviones[i].isEmpty == 0 && aviones[i].idAerolinea == aerolineas[a].id)
+                {
+                    listarAvion(aviones[i],aerolineas,cantAerolineas,tipos,cantTipos);
+                    flagIngreso = 1;
+                }
+            }
+            if(!flagIngreso)
+            {
+                printf("No hay aviones para la aerolinea %s.\n",descAero);
+            }
+
+        }
+        retorno = 1;
+    }
+    return retorno = 0;
+
+}
+
+int  listarAerolineaConMasCarga (eAvion aviones[],int tamAviones,eTipo tipos[],int cantTipos,eAerolinea aerolineas[],int cantAerolineas)
+{
+    int retorno = 0;
+
+    int acumLan=0;
+    int acumIberia=0;
+    int acumNorw=0;
+    int acumAmerican=0;
+    int acumAustral=0;
+    int aerolineaMasCarga;
+    int flagIngreso = 0;
+    char descAero[20];
+    int acumMax;
+    if (aviones != NULL && tipos != NULL && aerolineas != NULL && cantAerolineas > 0 && cantTipos > 0 && tamAviones >0)
+    {
+        printf("   * * * AEROLINEA CON MAS CAPACIDAD * * *\n\n\n");
+
+        printf("ID           AEROLINEA           TIPO      CAPACIDAD \n");
+        printf("--------------------------------------------------\n");
+        for (int i = 0; i < tamAviones; i++)
+        {
+            if (aviones[i].isEmpty == 0)
+            {
+                switch(aviones[i].idAerolinea)
+                {
+                case 1000:
+                    acumLan = acumLan + aviones[i].capacidad;
+                    flagIngreso =1;
+                    break;
+                case 1001:
+                    acumIberia = acumIberia + aviones[i].capacidad;
+                    flagIngreso =1;
+                    break;
+                case 1002:
+                   acumNorw = acumNorw  + aviones[i].capacidad;
+                   flagIngreso =1;
+                    break;
+                case 1003:
+                   acumAmerican = acumAmerican + aviones[i].capacidad;
+                   flagIngreso =1;
+                    break;
+                case 1004:
+                    acumAustral = acumAustral + aviones[i].capacidad;
+                    flagIngreso =1;
+                    break;
+
+                }
+            }
+
+        }
+        if (acumLan > acumIberia && acumLan > acumNorw && acumLan > acumAmerican && acumLan > acumAustral)
+        {
+            aerolineaMasCarga = 1000;
+            acumMax = acumLan;
+        }
+        else
+        {
+            if (acumIberia >  acumNorw && acumIberia > acumAmerican && acumIberia > acumAustral)
+            {
+                aerolineaMasCarga = 1001;
+                acumMax = acumIberia;
+            }
+            else
+            {
+                if (acumNorw > acumAmerican && acumNorw > acumAustral)
+                {
+                    aerolineaMasCarga = 1002;
+                    acumMax = acumNorw;
+                }
+                else
+                {
+                    if (acumAmerican > acumAustral)
+                    {
+                        aerolineaMasCarga = 1003;
+                        acumMax = acumAmerican;
+                    }
+                    else
+                    {
+                        aerolineaMasCarga = 1004;
+                        acumMax = acumAustral;
+                    }
+
+                }
+            }
+        }
+        if (!flagIngreso)
+        {
+            printf("No hay aviones ingresados.\n");
+        }
+        else
+        {
+            cargarDescAero (aerolineas,cantAerolineas,aerolineaMasCarga,descAero);
+            printf("La aerolinea con mas carga es %s con un capacidad total de %d\n",descAero,acumMax);
+        }
+
+    }
+    return retorno;
+}
+int  listarAerolineaConMenosAviones (eAvion aviones[],int tamAviones,eTipo tipos[],int cantTipos,eAerolinea aerolineas[],int cantAerolineas)
+{
+    int retorno = 0;
+
+    int contLan=0;
+    int contIberia=0;
+    int contNorw=0;
+    int contAmerican=0;
+    int contAustral=0;
+    int aerolineaMenosAviones;
+    int flagIngreso = 0;
+    char descAero[20];
+    int contMax;
+    if (aviones != NULL && tipos != NULL && aerolineas != NULL && cantAerolineas > 0 && cantTipos > 0 && tamAviones >0)
+    {
+        printf("   * * * AEROLINEA CON MAS CAPACIDAD * * *\n\n\n");
+
+        printf("ID           AEROLINEA           TIPO      CAPACIDAD \n");
+        printf("--------------------------------------------------\n");
+        for (int i = 0; i < tamAviones; i++)
+        {
+            if (aviones[i].isEmpty == 0)
+            {
+                switch(aviones[i].idAerolinea)
+                {
+                case 1000:
+                    contLan++;
+                    flagIngreso =1;
+                    break;
+                case 1001:
+                    contIberia++;
+                    flagIngreso =1;
+                    break;
+                case 1002:
+                   contNorw ++;
+                   flagIngreso =1;
+                    break;
+                case 1003:
+                   contAmerican++;
+                   flagIngreso =1;
+                    break;
+                case 1004:
+                    contAustral++;
+                    flagIngreso =1;
+                    break;
+
+                }
+            }
+
+        }
+        if (contLan < contIberia && contLan < contNorw && contLan < contAmerican && contLan < contAustral)
+        {
+            aerolineaMenosAviones = 1000;
+            contMax = contLan;
+        }
+        else
+        {
+            if (contIberia <  contNorw && contIberia < contAmerican && contIberia < contAustral)
+            {
+                aerolineaMenosAviones = 1001;
+                contMax = contIberia;
+            }
+            else
+            {
+                if (contNorw < contAmerican && contNorw < contAustral)
+                {
+                    aerolineaMenosAviones = 1002;
+                    contMax = contNorw;
+                }
+                else
+                {
+                    if (contAmerican < contAustral)
+                    {
+                        aerolineaMenosAviones = 1003;
+                        contMax = contAmerican;
+                    }
+                    else
+                    {
+                        aerolineaMenosAviones = 1004;
+                        contMax = contAustral;
+                    }
+
+                }
+            }
+        }
+        if (!flagIngreso)
+        {
+            printf("No hay aviones ingresados.\n");
+        }
+        else
+        {
+            cargarDescAero (aerolineas,cantAerolineas,aerolineaMenosAviones,descAero);
+            printf("La aerolinea con menos aviones es %s con un total de %d\n",descAero,contMax);
+        }
+
+    }
+    return retorno;
+}

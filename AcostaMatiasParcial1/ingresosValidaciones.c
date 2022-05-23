@@ -208,7 +208,7 @@ int getInt(int* pResultado)
  * \return int 0 en caso de error 1 si salio todo Ok.
  *
  */
- static int getFloat(float* pResultado)
+static int getFloat(float* pResultado)
 {
     int retorno = 0;
     char buffer[4096];
@@ -372,4 +372,78 @@ int utn_getAlfanumerico(char* pResultado, char* mensaje, char* mensajeError,int 
     }
     return retorno;
 }
+int esFecha(int dia, int mes, int anio)
+{
+    int retorno = 0;
+    if ( mes >= 1 && mes <= 12 )
+    {
+        retorno = 1;
+        switch ( mes )
+        {
+        case  1 :
+        case  3 :
+        case  5 :
+        case  7 :
+        case  8 :
+        case 10 :
+        case 12 :
+            if ( dia < 1 || dia > 31 )
+            {
+                retorno = 0;
+            }
+            break;
+        case  4 :
+        case  6 :
+        case  9 :
+        case 11 :
+            if ( dia < 1 || dia >30 )
+            {
+                retorno = 0;
+            }
+            break;
 
+        case  2 :
+            if ( dia < 1 ||  dia > 28 )
+            {
+                retorno = 0;
+            }
+
+        }
+    }
+    return retorno;
+}
+int utn_getFecha(int* dia, int* mes, int* anio)
+{
+    int retorno = 0;
+    char mensajeDia[]="Ingrese el dia 1 a 31 (puede variar segun el mes): ";
+    char mensajeMes[]="Ingrese el mes 1 a 12: ";
+    char mensajeAnio[]="Ingrese el anio 1900 a 2022: ";
+    char mensajeError[]="Error=";
+    int auxDia;
+    int auxMes;
+    int auxAnio;
+    int flagSeguir;
+    if (dia != NULL && mes != NULL && anio != NULL)
+    {
+        do
+        {
+            utn_getNumeroInt(&auxDia,mensajeDia,mensajeError,1,31,-1);
+            utn_getNumeroInt(&auxMes,mensajeMes,mensajeError,1,12,-1);
+            utn_getNumeroInt(&auxAnio,mensajeAnio,mensajeError,1900,2022,-1);
+            if (!esFecha(auxDia,auxMes,auxAnio))
+            {
+                flagSeguir = 1;
+                printf("ERROR=La fecha ingresada es invalida, ingresela nuevamente.\n");
+            }
+            else
+            {
+                *dia = auxDia;
+                *mes = auxMes;
+                *anio = auxAnio;
+                flagSeguir = 0;
+                retorno = 1;
+            }
+        }while(flagSeguir == 1);
+    }
+    return retorno;
+}
