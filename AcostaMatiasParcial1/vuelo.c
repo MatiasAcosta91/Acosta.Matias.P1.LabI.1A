@@ -156,7 +156,7 @@ int harcodearVuelos(eVuelo vuelos[], int cantVuelos,int* pIdAvion,int* pIdVuelo)
         {0,0,20002,"",{13,7,2012},0}
 
     };
-    if (vuelos != NULL)
+    if (vuelos != NULL && pIdAvion != NULL && pIdVuelo != NULL && cantVuelos >0)
     {
         for (int i = 0; i < cantVuelos &&  j < 10; i++)
         {
@@ -182,7 +182,7 @@ int listarVuelosPorAvion(eVuelo vuelos[],int cantVuelos,eAvion aviones[],int max
     char mensajeError[]="ERROR=";
     int avionBuscado;
     int indexAvionBucado;
-    if (aviones != NULL && destinos != NULL && maxAviones >0 && cantDestinos >0)
+    if (vuelos != NULL && aviones != NULL && destinos != NULL && tipos != NULL && aerolineas != NULL && cantVuelos >0 && maxAviones >0 && cantDestinos >0 && cantTipos >0 && cantAero >0)
     {
         listarAviones (aviones,maxAviones,tipos,cantTipos,aerolineas,cantAero);
         utn_getNumeroInt(&avionBuscado,mensajeAvion,mensajeError,10000,99999,INTENTOSINF);
@@ -213,7 +213,7 @@ int informarCostoTotalSegunAvion(eVuelo vuelos[],int cantVuelos,eAvion aviones[]
     int avionBuscado;
     int indexAvionBucado;
     float acumPrecios = 0;
-    if (aviones != NULL && destinos != NULL && maxAviones >0 && cantDestinos >0)
+    if (vuelos != NULL && aviones != NULL && destinos != NULL && tipos != NULL && aerolineas != NULL && cantVuelos >0 && maxAviones >0 && cantDestinos >0 && cantTipos >0 && cantAero >0)
     {
         listarAviones (aviones,maxAviones,tipos,cantTipos,aerolineas,cantAero);
         utn_getNumeroInt(&avionBuscado,mensajeAvion,mensajeError,10000,99999,INTENTOSINF);
@@ -252,7 +252,7 @@ int avionesSegunDestino (eVuelo vuelos[],int cantVuelos,eAvion aviones[],int max
     int destinoElegido;
     int avionEncontrado;
     int flag = 0;
-    if (aviones != NULL && destinos != NULL && maxAviones >0 && cantDestinos >0)
+    if (vuelos != NULL && aviones != NULL && destinos != NULL && tipos != NULL && aerolineas != NULL && cantVuelos >0 && maxAviones >0 && cantDestinos >0 && cantTipos >0 && cantAero)
     {
         listarDestinos(destinos,cantDestinos);
         utn_getNumeroInt(&destinoElegido,mensajeDestino,mensajeError,20000,20003,INTENTOSINF);

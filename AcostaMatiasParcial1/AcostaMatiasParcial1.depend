@@ -112,7 +112,7 @@
 	<ctype.h>
 	"ingresosValidaciones.h"
 
-1653316456 source:c:\users\acost\onedrive\escritorio\acosta.matias.p1.labi.1a-master\acostamatiasparcial1\main.c
+1653317596 source:c:\users\acost\onedrive\escritorio\acosta.matias.p1.labi.1a-master\acostamatiasparcial1\main.c
 	<stdio.h>
 	<stdlib.h>
 	"avion.h"
@@ -135,7 +135,7 @@
 	<string.h>
 	"tipo.h"
 
-1653316504 source:c:\users\acost\onedrive\escritorio\acosta.matias.p1.labi.1a-master\acostamatiasparcial1\vuelo.c
+1653317557 source:c:\users\acost\onedrive\escritorio\acosta.matias.p1.labi.1a-master\acostamatiasparcial1\vuelo.c
 	<stdlib.h>
 	<stdio.h>
 	<ctype.h>
